@@ -14,7 +14,7 @@
 	const websiteData = website as unknown as WebSite;
 	const menuItems = orderBy(menu, 'weight');
 	const menuData = menuItems as unknown as MenuItem[];
-	const googleAnalytics = externals.googleAnalytics.UA_ID;
+	const gaPropertyID = externals.googleAnalytics.propertyID;
 </script>
 
 <svelte:head>
@@ -29,13 +29,12 @@
 	{#if websiteData.keywords != ''}
 		<meta name="keywords" content={websiteData.keywords} />
 	{/if}
-
 	<GoogleFonts fonts={externals.googleFonts} />
-
-	{#if googleAnalytics != ''}
-		<GoogleAnalytics UA_ID={googleAnalytics} />
-	{/if}
 </svelte:head>
+
+{#if gaPropertyID != ''}
+	<GoogleAnalytics enabled={true} trackingId={gaPropertyID} />
+{/if}
 
 <SEO websiteData={website} {menuData} />
 
