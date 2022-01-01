@@ -1,5 +1,8 @@
-import { stringify } from 'ajv';
-
+declare global {
+	interface Window {
+		dataLayer: Array<any>;
+	}
+}
 export interface WebSite {
 	name: string;
 	baseURL: string;
