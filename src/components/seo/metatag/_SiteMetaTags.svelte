@@ -6,7 +6,7 @@
 
 	const metatags: MetaTagsProps = {
 		title: `${data.title}`,
-		description: `${data.description}`,
+		description: `${data.seoDescription}`,
 		canonical: `${data.baseURL}`,
 		robotsProps: {
 			nosnippet: true,
@@ -22,7 +22,7 @@
 			url: `${data.baseURL}`,
 			site_name: `${data.name}`,
 			title: `${data.title}`,
-			description: `${data.description}`,
+			description: `${data.seoDescription}`,
 			images: [
 				{
 					url: `${data.baseURL}/${data.logo}`,
@@ -31,6 +31,11 @@
 					alt: 'Logo'
 				}
 			]
+		},
+		twitter: {
+			site: `${data.baseURL}`,
+			handle: `${data.socials.twitter}`,
+			cardType: 'summary_large_image'
 		},
 		additionalMetaTags: [
 			{

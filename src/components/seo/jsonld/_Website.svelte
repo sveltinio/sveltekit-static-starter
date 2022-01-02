@@ -13,7 +13,7 @@
 		'@id': `${data.baseURL}/#website`,
 		name: `${data.name}`,
 		url: `${data.baseURL}`,
-		description: `${data.description}`,
+		description: `${data.seoDescription}`,
 		inLanguage: `${data.language}`,
 		sameAs: [`${sameAs}`]
 	}}

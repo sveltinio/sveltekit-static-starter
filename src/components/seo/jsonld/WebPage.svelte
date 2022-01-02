@@ -1,22 +1,21 @@
-<script>
+<script lang="ts">
+	import type { WebSite } from '$lib/interfaces';
 	import { JsonLd } from 'svelte-meta-tags';
-	export let name;
-	export let description;
-	export let publisher;
-	export let baseURL;
+
+	export let data: WebSite;
 </script>
 
 <JsonLd
 	schema={{
 		'@type': 'WebPage',
-		name: { name },
-		description: { description },
+		name: `${data.name}`,
+		description: `${data.seoDescription}`,
 		publisher: {
 			'@type': 'ProfilePage',
-			name: { publisher }
+			name: `${data.webmaster.name}`
 		},
 		isPartOf: {
-			'@id': `${baseURL}/#website`
+			'@id': `${data.baseURL}/#website`
 		}
 	}}
 />

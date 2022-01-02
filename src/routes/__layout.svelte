@@ -21,7 +21,7 @@
 	<html lang={websiteData.language} />
 	<title>{websiteData.name}</title>
 	<link rel="canonical" href={websiteData.baseURL} />
-	<meta name="description" content={websiteData.description} />
+	<meta name="description" content={websiteData.seoDescription} />
 	<meta
 		name="robots"
 		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"

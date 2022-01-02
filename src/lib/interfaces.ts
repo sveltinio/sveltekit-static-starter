@@ -10,6 +10,7 @@ export interface WebSite {
 	title: string;
 	slogan: string;
 	description: string;
+	seoDescription: string;
 	logo: string;
 	copyright: string;
 	keywords: string;
