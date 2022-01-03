@@ -9,8 +9,8 @@
 		description: `${data.seoDescription}`,
 		canonical: `${data.baseURL}`,
 		robotsProps: {
-			nosnippet: true,
-			notranslate: true,
+			nosnippet: false,
+			notranslate: false,
 			noimageindex: true,
 			noarchive: true,
 			maxSnippet: -1,

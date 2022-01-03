@@ -20,23 +20,16 @@
 <svelte:head>
 	<html lang={websiteData.language} />
 	<title>{websiteData.name}</title>
-	<link rel="canonical" href={websiteData.baseURL} />
-	<meta name="description" content={websiteData.seoDescription} />
-	<meta
-		name="robots"
-		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-	/>
 	{#if websiteData.keywords != ''}
 		<meta name="keywords" content={websiteData.keywords} />
 	{/if}
 	<GoogleFonts fonts={externals.googleFonts} />
+	<SEO websiteData={website} {menuData} />
 </svelte:head>
 
 {#if gaPropertyID != ''}
 	<GoogleAnalytics enabled={true} trackingId={gaPropertyID} />
 {/if}
-
-<SEO websiteData={website} {menuData} />
 
 <div class="main-container">
 	<main>
