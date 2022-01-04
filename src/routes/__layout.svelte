@@ -18,13 +18,8 @@
 </script>
 
 <svelte:head>
-	<html lang={websiteData.language} />
-	<title>{websiteData.name}</title>
-	{#if websiteData.keywords != ''}
-		<meta name="keywords" content={websiteData.keywords} />
-	{/if}
-	<GoogleFonts fonts={externals.googleFonts} />
 	<SEO websiteData={website} {menuData} />
+	<GoogleFonts fonts={externals.googleFonts} />
 </svelte:head>
 
 {#if gaPropertyID != ''}

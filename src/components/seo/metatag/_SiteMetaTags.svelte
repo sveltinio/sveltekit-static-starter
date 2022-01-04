@@ -1,49 +1,49 @@
 <script lang="ts">
+	import sveltinVersion from '$config/defaults.js';
 	import type { WebSite } from '$lib/interfaces';
 
-	import { MetaTags, MetaTagsProps } from 'svelte-meta-tags';
+	const generatorText = 'Sveltin v' + sveltinVersion;
 	export let data: WebSite;
-
-	const metatags: MetaTagsProps = {
-		title: `${data.title}`,
-		description: `${data.seoDescription}`,
-		canonical: `${data.baseURL}`,
-		robotsProps: {
-			nosnippet: false,
-			notranslate: false,
-			noimageindex: true,
-			noarchive: true,
-			maxSnippet: -1,
-			maxImagePreview: 'large',
-			maxVideoPreview: -1
-		},
-		openGraph: {
-			type: 'website',
-			url: `${data.baseURL}`,
-			site_name: `${data.name}`,
-			title: `${data.title}`,
-			description: `${data.seoDescription}`,
-			images: [
-				{
-					url: `${data.baseURL}/${data.logo}`,
-					width: 800,
-					height: 600,
-					alt: 'Logo'
-				}
-			]
-		},
-		twitter: {
-			site: `${data.baseURL}`,
-			handle: `${data.socials.twitter}`,
-			cardType: 'summary_large_image'
-		},
-		additionalMetaTags: [
-			{
-				name: 'generator',
-				content: 'Sveltin'
-			}
-		]
-	};
 </script>
 
-<MetaTags {...metatags} />
+<title>{data.name}</title>
+<link rel="canonical" href={data.baseURL} />
+<meta name="description" content={data.seoDescription} />
+<meta name="generator" content={generatorText} />
+{#if data.keywords != ''}
+	<meta name="keywords" content={data.keywords} />
+{/if}
+<!-- Robots-->
+<meta
+	name="robots"
+	content="index,follow,max-snippet:-1,max-image-preview:large,noarchive,max-video-preview:-1"
+/>
+<meta
+	name="googlebot"
+	content="index,follow,max-snippet:-1,max-image-preview:large,noarchive,max-video-preview:-1"
+/>
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content={data.name} />
+<meta itemprop="description" content={data.seoDescription} />
+<meta itemprop="image" content="{data.baseURL}/{data.logo}" />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={data.baseURL} />
+<meta property="og:title" content="{data.title}" />
+<meta
+	property="og:description"
+	content="{data.seoDescription}"
+/>
+<meta property="og:image" content="{data.baseURL}/{data.logo}" />
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={data.baseURL} />
+<meta
+	property="twitter:title"
+	content="{data.seoDescription}"
+/>
+<meta
+	property="twitter:description"
+	content="{data.seoDescription}"
+/>
+<meta property="twitter:image" content="{data.baseURL}/{data.logo}" />
