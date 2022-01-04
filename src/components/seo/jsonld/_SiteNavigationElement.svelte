@@ -12,14 +12,25 @@
 	export let menuData: MenuItem[];
 
 	let elementList = Array<Object>();
-	forEach(menuData, function (item) {
-		const elem: JsonLdSiteNavigationElementItem = {
-			position: item.weight,
-			name: item.identifier,
-			description: item.identifier,
-			url: `${data.baseURL}` + item.url
-		};
-		elementList.push(jsonLdSiteNavigationElementToObject(elem));
+
+	forEach(menuData, function (item: MenuItem) {
+		if (!item.external) {
+			const elem: JsonLdSiteNavigationElementItem = {
+				position: item.weight,
+				name: item.identifier,
+				description: item.identifier,
+				url: `${data.baseURL}` + item.url
+			};
+			elementList.push(jsonLdSiteNavigationElementToObject(elem));
+		} else {
+			const elem: JsonLdSiteNavigationElementItem = {
+				position: item.weight,
+				name: item.identifier,
+				description: item.identifier,
+				url: item.url
+			};
+			elementList.push(jsonLdSiteNavigationElementToObject(elem));
+		}
 	});
 </script>
 

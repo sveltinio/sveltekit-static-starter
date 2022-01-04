@@ -45,6 +45,7 @@ export interface MenuItem {
 	name: string;
 	url: string;
 	weight: number;
+	external: boolean;
 	children: Array<MenuItem>;
 }
 
