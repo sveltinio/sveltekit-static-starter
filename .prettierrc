@@ -3,6 +3,5 @@
 	"singleQuote": true,
 	"trailingComma": "none",
 	"printWidth": 100,
-	"bracketSpacing": true,
-	"svelteSortOrder": "scripts-markup-styles"
+	"bracketSpacing": true
 }
