@@ -1,8 +1,8 @@
-import version from '$config/defaults';
+import { sveltinVersion } from '$config/defaults.js';
 export function get(): Record<string, unknown> {
 	return {
 		body: {
-			version
+			sveltinVersion
 		}
 	};
 }
