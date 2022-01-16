@@ -28,7 +28,6 @@
 			"$lib/*": ["src/lib/*"],
 			"$config/*": ["config/*"],
 			"$content/*": ["content/*"],
-			"$components/*": ["src/components/*"],
 			"$themes/*": ["themes/*"]
 		}
 	},

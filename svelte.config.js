@@ -39,7 +39,6 @@ const config = {
 					$config: path.resolve('config'),
 					$content: path.resolve('content'),
 					$lib: path.resolve('src/lib'),
-					$components: path.resolve('src/components'),
 					$themes: path.resolve('themes')
 				}
 			},
