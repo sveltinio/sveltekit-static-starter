@@ -16,17 +16,25 @@ export const isNotEmpty = (text: string): boolean => {
 	return Boolean(text);
 };
 
-export const getCoverImagePath = (
-	urlData: URL,
-	item: ResourceContent,
-	websiteData: IWebSite
-): string => {
+export const getPageUrl = (name: string, websiteData: IWebSite): string => {
+	return websiteData.baseURL + '/' + name;
+};
+
+export const getSlugPageUrl = (item: ResourceContent, websiteData: IWebSite): string => {
+	return websiteData.baseURL + '/' + item.resource + '/' + item.metadata.slug;
+};
+
+export const getFavicon = (websiteData: IWebSite): string => {
+	return websiteData.baseURL + '/' + websiteData.favicon;
+};
+
+export const getCoverImagePath = (item: ResourceContent, websiteData: IWebSite): string => {
 	if (item.metadata.cover && isNotEmpty(item.metadata.cover)) {
 		return (
-			urlData.origin +
+			websiteData.baseURL +
 			'/' +
 			`resources/${item.resource}/${item.metadata.slug}/${item.metadata.cover}`
 		);
 	}
-	return urlData.origin + '/' + websiteData.favicon;
+	return getFavicon(websiteData);
 };
