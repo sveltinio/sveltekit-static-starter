@@ -17,22 +17,21 @@ export const isNotEmpty = (text: string): boolean => {
 };
 
 export const getPageUrl = (name: string, websiteData: IWebSite): string => {
-	return websiteData.baseURL + '/' + name;
+	return websiteData.baseURL.concat('/', name, '/');
 };
 
 export const getSlugPageUrl = (item: ResourceContent, websiteData: IWebSite): string => {
-	return websiteData.baseURL + '/' + item.resource + '/' + item.metadata.slug;
+	return websiteData.baseURL.concat('/', item.resource, '/', item.metadata.slug, '/');
 };
 
 export const getFavicon = (websiteData: IWebSite): string => {
-	return websiteData.baseURL + '/' + websiteData.favicon;
+	return websiteData.baseURL.concat('/', websiteData.favicon);
 };
 
 export const getCoverImagePath = (item: ResourceContent, websiteData: IWebSite): string => {
 	if (item.metadata.cover && isNotEmpty(item.metadata.cover)) {
-		return (
-			websiteData.baseURL +
-			'/' +
+		return websiteData.baseURL.concat(
+			'/',
 			`resources/${item.resource}/${item.metadata.slug}/${item.metadata.cover}`
 		);
 	}
