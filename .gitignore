@@ -143,3 +143,6 @@ Temporary Items
 /.svelte-kit
 /package
 *.sh
+
+# Sveltin
+/backups
