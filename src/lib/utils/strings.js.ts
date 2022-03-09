@@ -1,15 +1,30 @@
 import type { IWebSite } from '@sveltinio/seo/types';
 import type { ResourceContent } from '@sveltinio/widgets/types';
 
-export const textToSlug = (text: string): string => {
+export const ToTitle = (text: string): string => {
+	return CapitalizeAll(text.replace(/-/g, ' '));
+};
+
+export const CapitalizeAll = (text: string): string => {
+	let splitted = text.toLowerCase().split(' ');
+
+	let capitalized: Array<String> = [];
+	splitted.forEach(function (item) {
+		capitalized.push(CapitalizeFirstLetter(item));
+	});
+
+	return capitalized.join(' ');
+};
+
+export const CapitalizeFirstLetter = (text: string): string => {
+	return text.charAt(0).toUpperCase() + text.substring(1).toLowerCase();
+};
+
+export const ToSlug = (text: string): string => {
 	return text
 		.toLowerCase()
 		.replace(/[^\w ]+/g, '')
 		.replace(/ +/g, '-');
-};
-
-export const convertToSentenceCase = (text: string): string => {
-	return text.charAt(0).toUpperCase() + text.substring(1).toLowerCase().replace(/-/g, ' ');
 };
 
 export const isNotEmpty = (text: string): boolean => {
