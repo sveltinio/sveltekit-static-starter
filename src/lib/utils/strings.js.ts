@@ -6,13 +6,12 @@ export const ToTitle = (text: string): string => {
 };
 
 export const CapitalizeAll = (text: string): string => {
-	let splitted = text.toLowerCase().split(' ');
+	const splitted = text.toLowerCase().split(' ');
+	const capitalized: Array<string> = [];
 
-	let capitalized: Array<String> = [];
 	splitted.forEach(function (item) {
 		capitalized.push(CapitalizeFirstLetter(item));
 	});
-
 	return capitalized.join(' ');
 };
 
