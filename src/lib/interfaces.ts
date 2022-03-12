@@ -21,3 +21,7 @@ export interface MetadataItem {
 	slug: string;
 	headline: string;
 }
+
+export interface DynamicObject {
+	[key: string]: any;
+}
