@@ -1,27 +1,7 @@
+export {};
+
 declare global {
 	interface Window {
-		dataLayer: Array<any>;
+		dataLayer: object[];
 	}
-}
-
-export interface ExternalLinkItem {
-	identifier: string;
-	name: string;
-	url: string;
-	weight: number;
-}
-
-export interface Metadata {
-	name: string;
-	items: Array<MetadataItem>;
-}
-
-export interface MetadataItem {
-	title: string;
-	slug: string;
-	headline: string;
-}
-
-export interface DynamicObject {
-	[key: string]: any;
 }
