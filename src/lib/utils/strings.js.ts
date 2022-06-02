@@ -31,11 +31,11 @@ export const isNotEmpty = (text: string): boolean => {
 };
 
 export const getPageUrl = (name: string, websiteData: IWebSite): string => {
-	return websiteData.baseURL.concat('/', name, '/');
+	return websiteData.baseURL.concat('/', name);
 };
 
 export const getSlugPageUrl = (item: ResourceContent, websiteData: IWebSite): string => {
-	return websiteData.baseURL.concat('/', item.resource, '/', item.metadata.slug, '/');
+	return websiteData.baseURL.concat('/', item.resource, '/', item.metadata.slug);
 };
 
 export const getFavicon = (websiteData: IWebSite): string => {
