@@ -1,4 +1,4 @@
-declare namespace Sveltin {
+export namespace Sveltin {
 	export interface ContentEntry {
 		resource: string;
 		metadata: YAMLFrontmatter;
@@ -20,7 +20,7 @@ declare namespace Sveltin {
 		created_at?: string;
 		updated_at?: string;
 		cover?: string;
-		[key: string]: string | number | object | [];
+		[key: string]: string | number | boolean | object | [];
 	}
 
 	export interface TOCEntry {
