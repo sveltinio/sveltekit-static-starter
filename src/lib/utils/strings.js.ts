@@ -1,5 +1,5 @@
 import type { IWebSite } from '@sveltinio/seo/types';
-import type { ResourceContent } from '@sveltinio/widgets/types';
+import type { Sveltin } from 'src/sveltin';
 
 export const ToTitle = (text: string): string => {
 	return CapitalizeAll(text.replace(/-/g, ' '));
@@ -34,7 +34,7 @@ export const getPageUrl = (name: string, websiteData: IWebSite): string => {
 	return websiteData.baseURL.concat('/', name);
 };
 
-export const getSlugPageUrl = (item: ResourceContent, websiteData: IWebSite): string => {
+export const getSlugPageUrl = (item: Sveltin.ContentEntry, websiteData: IWebSite): string => {
 	return websiteData.baseURL.concat('/', item.resource, '/', item.metadata.slug);
 };
 
@@ -42,7 +42,7 @@ export const getFavicon = (websiteData: IWebSite): string => {
 	return websiteData.baseURL.concat('/', websiteData.favicon);
 };
 
-export const getCoverImagePath = (item: ResourceContent, websiteData: IWebSite): string => {
+export const getCoverImagePath = (item: Sveltin.ContentEntry, websiteData: IWebSite): string => {
 	if (item.metadata.cover && isNotEmpty(item.metadata.cover)) {
 		return websiteData.baseURL.concat(
 			'/',
