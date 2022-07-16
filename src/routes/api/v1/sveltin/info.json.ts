@@ -1,5 +1,5 @@
 import { sveltinVersion, sveltekitVersion, buildTime } from '$config/defaults.js';
-export function get(): Record<string, unknown> {
+export function GET(): Record<string, unknown> {
 	return {
 		body: {
 			sveltinVersion,
