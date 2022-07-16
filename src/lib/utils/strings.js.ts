@@ -26,6 +26,10 @@ export const ToSlug = (text: string): string => {
 		.replace(/ +/g, '-');
 };
 
+export const CamelToKebabCase = (text: string): string => {
+	return text.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+};
+
 export const isNotEmpty = (text: string): boolean => {
 	return Boolean(text);
 };
