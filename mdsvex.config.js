@@ -10,7 +10,7 @@ import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import headings from './src/lib/utils/headings.js';
 
-const config = defineConfig({
+const mdsvexConfig = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 	smartypants: {
 		dashes: 'oldschool'
@@ -48,4 +48,4 @@ const config = defineConfig({
 	]
 });
 
-export default config;
+export default mdsvexConfig;
