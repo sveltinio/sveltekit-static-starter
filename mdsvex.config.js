@@ -1,6 +1,4 @@
-//import { createRequire } from 'module';
-//const require = createRequire(import.meta.url);
-
+import { defineMDSveXConfig as defineConfig } from 'mdsvex';
 import relativeImages from 'mdsvex-relative-images';
 import preview, { textFormatter, htmlFormatter } from 'remark-preview';
 
@@ -12,7 +10,7 @@ import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import headings from './src/lib/utils/headings.js';
 
-const config = {
+const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 	smartypants: {
 		dashes: 'oldschool'
@@ -48,6 +46,6 @@ const config = {
 			})
 		]
 	]
-};
+});
 
 export default config;
