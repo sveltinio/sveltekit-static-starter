@@ -1,10 +1,12 @@
 import { sveltinVersion, sveltekitVersion, buildTime } from '$config/defaults.js';
-export function GET(): Record<string, unknown> {
-	return {
-		body: {
+
+/** @type {import('./$types').RequestHandler} */
+export function GET(): Response {
+	return new Response(
+		JSON.stringify({
 			sveltinVersion,
 			sveltekitVersion,
 			buildTime
-		}
-	};
+		})
+	);
 }
