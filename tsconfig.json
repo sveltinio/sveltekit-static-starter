@@ -11,16 +11,16 @@
 		"strict": false,
 		"outDir": "./build",
 		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"],
-			"$data": ["data"],
-			"$data/*": ["data/*"],
-			"$config": ["config"],
-			"$config/*": ["config/*"],
-			"$content": ["content"],
-			"$content/*": ["content/*"],
-			"$themes": ["themes"],
-			"$themes/*": ["themes/*"]
+			"$lib": ["./src/lib"],
+			"$lib/*": ["./src/lib/*"],
+			"$data": ["./data"],
+			"$data/*": ["./data/*"],
+			"$config": ["./config"],
+			"$config/*": ["./config/*"],
+			"$content": ["./content"],
+			"$content/*": ["./content/*"],
+			"$themes": ["./themes"],
+			"$themes/*": ["./themes/*"]
 		}
 	},
 	"include": [
