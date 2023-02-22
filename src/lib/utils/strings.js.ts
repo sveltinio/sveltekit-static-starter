@@ -1,8 +1,6 @@
 import type { Sveltin } from '$sveltin';
 
-export const capitalizeFirstLetter = (text: string): string => {
-	return text.charAt(0).toUpperCase() + text.substring(1).toLowerCase();
-};
+export const toTitle = (text: string): string => capitalizeAll(text.replace(/-/g, ' '));
 
 export const capitalizeAll = (text: string): string => {
 	const splitted = text.toLowerCase().split(' ');
@@ -14,7 +12,8 @@ export const capitalizeAll = (text: string): string => {
 	return capitalized.join(' ');
 };
 
-export const toTitle = (text: string): string => capitalizeAll(text.replace(/-/g, ' '));
+export const capitalizeFirstLetter = (text: string): string =>
+	text.charAt(0).toUpperCase() + text.substring(1).toLowerCase();
 
 export const toSlug = (text: string): string =>
 	text
@@ -22,10 +21,9 @@ export const toSlug = (text: string): string =>
 		.replace(/[^\w ]+/g, '')
 		.replace(/ +/g, '-');
 
-export const camelToKebabCase = (text: string): string =>
-	text.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
-
 export const isNotEmpty = (text: string): boolean => Boolean(text);
+
+export const removeTrailingSlash = (text: string): string => text.replace(/\/+$/, '');
 
 export const getPageUrl = (name: string, websiteData: Sveltin.WebSite): string =>
 	websiteData.baseURL.concat('/', name);
@@ -33,12 +31,10 @@ export const getPageUrl = (name: string, websiteData: Sveltin.WebSite): string =
 export const getSlugPageUrl = (
 	item: Sveltin.ResourceContent,
 	websiteData: Sveltin.WebSite
-): string => {
-	return websiteData.baseURL.concat('/', item.resource, '/', item.metadata.slug);
-};
+): string => websiteData.baseURL.concat('/', item.resource, '/', item.metadata.slug);
 
 export const getFavicon = (websiteData: Sveltin.WebSite): string =>
-	websiteData.baseURL.concat('/', websiteData.favicon);
+	websiteData.baseURL.concat('/', 'images', '/', 'icons', '/', websiteData.favicon);
 
 export const getCoverImagePath = (
 	item: Sveltin.ResourceContent,
