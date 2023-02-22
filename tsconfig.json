@@ -11,6 +11,7 @@
 		"strict": false,
 		"outDir": "./build",
 		"paths": {
+			"$sveltin": ["./src/sveltin"],
 			"$lib": ["./src/lib"],
 			"$lib/*": ["./src/lib/*"],
 			"$data": ["./data"],
@@ -33,9 +34,10 @@
 		"themes/**/*.ts",
 		"themes/**/*.svelte"
 	],
-	"exclude": ["src/lib/utils/collections.js", "src/lib/utils/headings.js"]
-	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
-	//
-	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
-	// from the referenced tsconfig.json - TypeScript does not merge them in
+	"exclude": ["src/lib/utils/collections.js"]
+	/**
+	 * Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
+	 *
+	 * If you want to overwrite includes/excludes, make sure to copy over the relevant includes excludes from the referenced tsconfig.json - TypeScript does not merge them in
+	 */
 }
