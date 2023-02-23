@@ -36,6 +36,9 @@ export const getSlugPageUrl = (
 export const getFavicon = (websiteData: Sveltin.WebSite): string =>
 	websiteData.baseURL.concat('/', 'images', '/', 'icons', '/', websiteData.favicon);
 
+export const getSocialImage = (baseURL: string, folder: string, filename: string): string =>
+	baseURL.concat(folder, '/', filename);
+
 export const getCoverImagePath = (
 	item: Sveltin.ResourceContent,
 	websiteData: Sveltin.WebSite
